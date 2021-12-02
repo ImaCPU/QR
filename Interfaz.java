@@ -34,12 +34,9 @@ public class Interfaz{
              }
     
    public void Print( double x){
-       System.out.println(String.format("%.0f",x));
+       System.out.println(String.format("%.8f",x));
        //System.exit(0);
        
    }
    
-   public void Exit(){
-       System.exit(0);
-   }
 }

@@ -5,13 +5,14 @@ public class DataSet {
     double x,a,b,c;
     double sse, sst;
     double r2;
-        
+    
+    /*
     double datos[][] = {
         {-3,7.5}, {-2,3}, {-1,0.5}, {0,1}, {1,3}, {2,6}, {3,14}
     };//Fin double tablaX
+    */
     
     
-    /*
     double datos[][] = {
         {50,3.3}, {50,2.8}, {50,2.9}, 
         {70,2.3}, {70,2.6}, {70,2.1}, 
@@ -19,7 +20,7 @@ public class DataSet {
         {90,3}, {90,3.1}, {90,2.8}, 
         {100,3.3}, {100,3.5}, {100,3}
     };//Fin double tablaX
-    */
+    
     
     public DataSet(){}
     

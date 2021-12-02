@@ -161,16 +161,15 @@ public class HelperArithmetic extends Cramer{
         double M[][] = DS.getMatrizX();
         float suma=0;
         double f1,f2,f3,f4 = DS.getA();
-        //System.out.println(DS.getC());
+        
         for (int i = 0; i < M.length; i++){
             
             f1 = M[i][1];
             f2 = DS.getC()*pow(M[i][0],2);
             f3 = DS.getB()*M[i][0];
-            //System.out.println(pow(f1 - f2 - f3 - f4, 2));
-            suma = (float) (pow(f1 -1*( f2+ f3 +f4), 2) + suma);
             
-            //suma += pow(  M[i][1] - DS.getA()*pow(M[i][0],2) - DS.getB()*M[i][0] - DS.getC(), 2);
+            suma = (float) (pow(f1 -1*( f2+ f3 +f4), 2) + suma);
+
         }
         DS.setSSE(suma);
         //System.out.println(String.format("%.3f", suma));
@@ -183,7 +182,7 @@ public class HelperArithmetic extends Cramer{
         double media = SumatoriaExp(M,1,1)/ M.length;
         //System.out.println(media);
         for (int i = 0; i < M.length; i++){
-            suma =  Math.pow(M[i][1] - media,2) + suma;
+            suma = Math.pow(M[i][1] - media,2) + suma;
         }
         DS.setSST(suma);
         //return suma;
@@ -194,8 +193,6 @@ public class HelperArithmetic extends Cramer{
         SST(DS);
         double sse= DS.getSSE();
         double sst= DS.getSST();
-        //System.out.println(sse/sst);
-        //System.out.println(1 - sse/sst);
         DS.setR2(1-(sse/sst));
     }
     

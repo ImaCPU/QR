@@ -7,10 +7,79 @@ package mlr;
 
 
 import jade.core.Agent;
+import jade.core.behaviours.OneShotBehaviour;
 import jade.core.behaviours.Behaviour;
 
 public class QR extends Agent{
     
+        protected void setup (){
+       System.out.println("Agent " + getLocalName() + " Started.");
+       addBehaviour(new MyGenericBehaviour());
+   }
+
+    private static class MyGenericBehaviour extends Behaviour {
+
+        @Override
+        public void action() {
+            DataSet DS = new DataSet();
+            HelperArithmetic HA = new HelperArithmetic();
+            Interfaz IN = new Interfaz();
+            
+            HA.QuadraticRegretion(DS);
+            IN.formula(DS);
+            
+            //IN.Print(DS.getA());
+            //IN.Print(DS.getB());
+            //IN.Print(DS.getC());
+            
+            HA.R2(DS);
+            IN.R2(DS);
+            
+           //IN.Print(DS.getSSE());
+           //IN.Print(DS.getSST());
+            
+        }
+
+        @Override
+        public boolean done() {
+            myAgent.doDelete();
+            return false;
+            
+        }
+    }
+}
+    
+
+
+/*
+    protected void setup(){
+       System.out.println("Agent " + getLocalName() + " Started.");
+       addBehaviour(new MyOneShotBehaviour());         
+    }
+    
+    private class MyOneShotBehaviour extends OneShotBehaviour{
+
+        @Override
+        public void action() {
+            DataSet DS = new DataSet();
+            HelperArithmetic HA = new HelperArithmetic();
+            Interfaz IN = new Interfaz();
+            
+            HA.QuadraticRegretion(DS);
+            IN.formula(DS);
+            
+            HA.R2(DS);
+            
+            IN.Print(DS.getSSE());
+            IN.Print(DS.getSST());
+            
+            IN.R2(DS);
+        }*/
+
+
+
+
+    /*
     @Override
    protected void setup (){
        System.out.println("Agent " + getLocalName() + " Started.");
@@ -39,7 +108,8 @@ public class QR extends Agent{
             
         }
     }
-}
+    */
+
 
 
    /*
